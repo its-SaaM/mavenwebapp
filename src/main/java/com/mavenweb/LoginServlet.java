@@ -1,25 +1,22 @@
 package com.mavenweb;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
-
+import javax.servlet.*;
+import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String user = req.getParameter("username");
-        String pass = req.getParameter("password");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
-        if ("admin".equals(user) && "admin".equals(pass)) {
-            resp.sendRedirect("home");
+        if ("admin".equals(username) && "admin123".equals(password)) {
+            response.sendRedirect("/dashboard");
         } else {
-            resp.sendRedirect("index.jsp?error=1");
+            response.sendRedirect("/login?error=true");
         }
     }
 }
