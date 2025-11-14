@@ -1,0 +1,60 @@
+package com.mavenweb;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import static org.junit.Assert.assertEquals;
+
+public class LoginFunctionalityIT {
+
+    @BeforeClass
+    public static void startServer() throws Exception {
+        TestServer.start();
+    }
+
+    // VALID Login Test
+    @Test
+    public void validLoginReturnsSuccess() throws Exception {
+        URL url = new URL("http://localhost:8080/login");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        con.setDoOutput(true);
+
+        String params = "username=admin&password=admin123";
+
+        OutputStream os = con.getOutputStream();
+        os.write(params.getBytes());
+        os.flush();
+        os.close();
+
+        int status = con.getResponseCode();
+        assertEquals(200, status);  // servlet runs fine
+
+        // Servlet redirects after success
+        assertEquals("/dashboard", con.getHeaderField("Location"));
+    }
+
+    // INVALID Login Test
+    @Test
+    public void invalidLoginReturnsErrorRedirect() throws Exception {
+        URL url = new URL("http://localhost:8080/login");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        con.setDoOutput(true);
+
+        String params = "username=wrong&password=wrong";
+
+        OutputStream os = con.getOutputStream();
+        os.write(params.getBytes());
+        os.flush();
+        os.close();
+
+        int status = con.getResponseCode();
+        assertEquals(200, status);
+
+        assertEquals("/login?error=true", con.getHeaderField("Location"));
+    }
+}
