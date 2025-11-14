@@ -4,8 +4,6 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
-import com.mavenweb.LoginServlet;
-
 public class TestServer {
 
     private static Server server;
@@ -17,7 +15,9 @@ public class TestServer {
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
-        context.addServlet(new ServletHolder(new LoginServlet()), "/login");
+
+        // IMPORTANT: Jetty requires servlet CLASS (not object)
+        context.addServlet(new ServletHolder(LoginServlet.class), "/login");
 
         server.setHandler(context);
         server.start();
