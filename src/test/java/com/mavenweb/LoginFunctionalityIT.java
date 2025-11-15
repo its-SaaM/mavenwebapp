@@ -55,6 +55,6 @@ public class LoginFunctionalityIT {
         int status = con.getResponseCode();
         assertEquals(302, status);
 
-        assertEquals("/login?error=true", con.getHeaderField("Location"));
+        assertEquals("/login.jsp?error=true", con.getHeaderField("Location"));
     }
 }

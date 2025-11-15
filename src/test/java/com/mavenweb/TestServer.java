@@ -1,7 +1,8 @@
 package com.mavenweb;
 
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.ee10.webapp.WebAppContext;
+import org.eclipse.jetty.ee10.servlet.ServletContextHandler;
+import org.eclipse.jetty.ee10.servlet.ServletHolder;
 
 public class TestServer {
 
@@ -13,16 +14,16 @@ public class TestServer {
             return;
         }
 
-        // Jetty server on port 8081 (avoid conflict with Tomcat)
-        server = new Server(8081);
+        server = new Server(8080);
 
-        WebAppContext context = new WebAppContext();
+        ServletContextHandler context = new ServletContextHandler();
         context.setContextPath("/");
 
-        // Add your servlet
-        context.addServlet(LoginServlet.class, "/login");
+        // Register your LoginServlet
+        context.addServlet(new ServletHolder(new LoginServlet()), "/login");
 
         server.setHandler(context);
+
         server.start();
     }
 
