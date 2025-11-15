@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mavenweb.LoginFunctionalityIT" time="0.43" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mavenweb.LoginFunctionalityIT" time="0.457" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-25\bin"/>
-    <property name="sun.java.command" value="C:\Users\srksu\AppData\Local\Temp\surefire7341724954010780808\surefirebooter-20251115113717176_3.jar C:\Users\srksu\AppData\Local\Temp\surefire7341724954010780808 2025-11-15T11-37-17_073-jvmRun1 surefire-20251115113717176_1tmp surefire_0-20251115113717176_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\srksu\AppData\Local\Temp\surefire13777936125771679148\surefirebooter-20251115115116350_3.jar C:\Users\srksu\AppData\Local\Temp\surefire13777936125771679148 2025-11-15T11-51-16_251-jvmRun1 surefire-20251115115116350_1tmp surefire_0-20251115115116350_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="g:\Git\mavenwebapp\target\test-classes;g:\Git\mavenwebapp\target\classes;C:\Users\srksu\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.0.0\jakarta.servlet-api-6.0.0.jar;C:\Users\srksu\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\srksu\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\srksu\.m2\repository\org\eclipse\jetty\ee10\jetty-ee10-webapp\12.0.6\jetty-ee10-webapp-12.0.6.jar;C:\Users\srksu\.m2\repository\org\eclipse\jetty\jetty-session\12.0.6\jetty-session-12.0.6.jar;C:\Users\srksu\.m2\repository\org\eclipse\jetty\jetty-server\12.0.6\jetty-server-12.0.6.jar;C:\Users\srksu\.m2\repository\org\eclipse\jetty\jetty-http\12.0.6\jetty-http-12.0.6.jar;C:\Users\srksu\.m2\repository\org\eclipse\jetty\jetty-io\12.0.6\jetty-io-12.0.6.jar;C:\Users\srksu\.m2\repository\org\eclipse\jetty\jetty-xml\12.0.6\jetty-xml-12.0.6.jar;C:\Users\srksu\.m2\repository\org\eclipse\jetty\jetty-util\12.0.6\jetty-util-12.0.6.jar;C:\Users\srksu\.m2\repository\org\eclipse\jetty\ee10\jetty-ee10-servlet\12.0.6\jetty-ee10-servlet-12.0.6.jar;C:\Users\srksu\.m2\repository\org\eclipse\jetty\jetty-security\12.0.6\jetty-security-12.0.6.jar;C:\Users\srksu\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\srksu\AppData\Local\Temp\surefire7341724954010780808\surefirebooter-20251115113717176_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\srksu\AppData\Local\Temp\surefire13777936125771679148\surefirebooter-20251115115116350_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.1+8-LTS-27"/>
@@ -59,11 +59,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="validLoginReturnsSuccess" classname="com.mavenweb.LoginFunctionalityIT" time="0.09">
+  <testcase name="validLoginReturnsSuccess" classname="com.mavenweb.LoginFunctionalityIT" time="0.095">
     <system-err><![CDATA[SLF4J: No SLF4J providers were found.
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
 ]]></system-err>
   </testcase>
-  <testcase name="invalidLoginReturnsError" classname="com.mavenweb.LoginFunctionalityIT" time="0.001"/>
+  <testcase name="invalidLoginReturnsError" classname="com.mavenweb.LoginFunctionalityIT" time="0.0"/>
 </testsuite>
