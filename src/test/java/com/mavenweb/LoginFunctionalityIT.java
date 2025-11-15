@@ -39,7 +39,7 @@ public class LoginFunctionalityIT {
 
     @Test
     public void invalidLoginReturnsError() throws Exception {
-        URL url = new URL("http://localhost:9090/login");
+        URL url = new URL("http://localhost:9091/login");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("POST");
         con.setInstanceFollowRedirects(false);
