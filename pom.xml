@@ -12,40 +12,38 @@
 
     <dependencies>
 
-        <!-- Jakarta Servlet API (for Tomcat 10) -->
+        <!-- Jakarta Servlet API (Tomcat 10 / Servlet 6) -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- JUnit -->
         <dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>4.0.1</version>
-    <scope>provided</scope>
-</dependency>
-        
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Jetty 12 for integration tests (correct artifact) -->
         <dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.13.2</version>
-    <scope>test</scope>
-    </dependency>
-<!-- Embedded Jetty for integration testing -->
-<dependency>
-    <groupId>org.eclipse.jetty</groupId>
-    <artifactId>jetty-servlet</artifactId>
-    <version>9.4.50.v20221201</version>
-    <scope>test</scope>
-</dependency>
+            <groupId>org.eclipse.jetty.ee10</groupId>
+            <artifactId>jetty-ee10-webapp</artifactId>
+            <version>12.0.6</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
         <finalName>mavenwebapp</finalName>
 
         <plugins>
-            <!-- Compiler plugin -->
+
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -62,6 +60,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
             </plugin>
+
         </plugins>
     </build>
 

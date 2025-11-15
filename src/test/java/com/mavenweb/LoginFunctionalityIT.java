@@ -2,6 +2,7 @@ package com.mavenweb;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -15,12 +16,12 @@ public class LoginFunctionalityIT {
         TestServer.start();
     }
 
-    // VALID Login Test
     @Test
     public void validLoginReturnsSuccess() throws Exception {
         URL url = new URL("http://localhost:8080/login");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("POST");
+        con.setInstanceFollowRedirects(false);
         con.setDoOutput(true);
 
         String params = "username=admin&password=admin123";
@@ -31,18 +32,17 @@ public class LoginFunctionalityIT {
         os.close();
 
         int status = con.getResponseCode();
-        assertEquals(200, status);  // servlet runs fine
+        assertEquals(302, status);
 
-        // Servlet redirects after success
         assertEquals("/dashboard", con.getHeaderField("Location"));
     }
 
-    // INVALID Login Test
     @Test
-    public void invalidLoginReturnsErrorRedirect() throws Exception {
+    public void invalidLoginReturnsError() throws Exception {
         URL url = new URL("http://localhost:8080/login");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("POST");
+        con.setInstanceFollowRedirects(false);
         con.setDoOutput(true);
 
         String params = "username=wrong&password=wrong";
@@ -53,7 +53,7 @@ public class LoginFunctionalityIT {
         os.close();
 
         int status = con.getResponseCode();
-        assertEquals(200, status);
+        assertEquals(302, status);
 
         assertEquals("/login?error=true", con.getHeaderField("Location"));
     }
