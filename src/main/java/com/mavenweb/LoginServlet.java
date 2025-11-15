@@ -1,7 +1,7 @@
 package com.mavenweb;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
@@ -14,9 +14,9 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if ("admin".equals(username) && "admin123".equals(password)) {
-            response.sendRedirect("/dashboard");
+            response.sendRedirect("home.jsp");
         } else {
-            response.sendRedirect("/login?error=true");
+            response.sendRedirect("login.jsp?error=true");
         }
     }
 }
