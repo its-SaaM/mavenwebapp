@@ -14,7 +14,7 @@ public class TestServer {
             return;
         }
 
-        server = new Server(8080);
+        server = new Server(9090);
 
         ServletContextHandler context = new ServletContextHandler();
         context.setContextPath("/");
