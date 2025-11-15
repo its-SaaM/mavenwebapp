@@ -34,7 +34,7 @@ public class LoginFunctionalityIT {
         int status = con.getResponseCode();
         assertEquals(302, status);
 
-        assertEquals("/dashboard", con.getHeaderField("Location"));
+        assertEquals("/home.jsp", con.getHeaderField("Location"));
     }
 
     @Test
